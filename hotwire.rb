@@ -54,6 +54,12 @@ style = <<~HTML
 HTML
 gsub_file('app/views/layouts/application.html.erb', "<%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>", style)
 
+inject_into_file 'app/views/layouts/application.html.erb', before: '</head>' do
+  <<-HTML
+  <%= turbo_include_tags %>
+  HTML
+end
+
 # Flashes
 ########################################
 file 'app/views/shared/_flashes.html.erb', <<~HTML

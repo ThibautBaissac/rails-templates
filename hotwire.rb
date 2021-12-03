@@ -54,14 +54,6 @@ style = <<~HTML
 HTML
 gsub_file('app/views/layouts/application.html.erb', "<%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>", style)
 
-inject_into_file 'app/views/layouts/application.html.erb', before: '</head>' do
-  <<-HTML
-  <%= yield :head %>
-    <%= turbo_include_tags %>
-    <%#= stimulus_include_tags %>
-  HTML
-end
-
 # Flashes
 ########################################
 file 'app/views/shared/_flashes.html.erb', <<~HTML
@@ -177,6 +169,7 @@ after_bundle do
   run 'yarn add popper.js jquery bootstrap@4.6'
   append_file 'app/javascript/packs/application.js', <<~JS
 
+  import "controllers";
 
     // ----------------------------------------------------
     // Note(lewagon): ABOVE IS RAILS DEFAULT CONFIGURATION
@@ -215,7 +208,7 @@ after_bundle do
   ########################################
   rails_command 'hotwire:install'
   rails_command 'turbo:install:redis'
-  gsub_file('app/javascript/packs/application.js', /import Turbolinks from "turbolinks".*/, "// import Turbolinks from 'turbolinks';")
+  gsub_file('app/javascript/packs/application.js', /import Turbolinks from.*/, "// import Turbolinks from 'turbolinks';")
   gsub_file('app/javascript/packs/application.js', /Turbolinks.start().*/, "// Turbolinks.start()")
 
 

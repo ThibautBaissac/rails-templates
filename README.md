@@ -2,7 +2,6 @@
 
 Quickly generate rails app ready to be deployed with Bootstrap, Simple form and debugging gems based on the famous [Le Wagon](https://github.com/lewagon/rails-templates/) using [Rails Templates](http://guides.rubyonrails.org/rails_application_templates.html).
 
-
 ***
 ## Rails 7
 
@@ -18,7 +17,7 @@ gem install rails --no-document --pre
 rails _7.0.0.rc1_ new CHANGE_THIS_TO_YOUR_RAILS_APP_NAME \
   --database postgresql \
   -j esbuild --css bootstrap \
-  -m /Users/thibautbaissac/code/ThibautBaissac/rails-templates/rails_7.rb
+  -m https://raw.githubusercontent.com/ThibautBaissac/rails-templates/master/rails_7.rb
 ```
 
 3. Start the application:

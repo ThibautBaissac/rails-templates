@@ -1,0 +1,13 @@
+en:
+  login: 'Login'
+  logout: 'Logout'
+  time:
+    formats:
+      default: "%a, %d %b %Y %H:%M:%S %z"
+      long: "%B %d, %Y %H:%M"
+      short: "%d %b %H:%M"
+  date:
+    formats:
+      default: "%Y-%m-%d" # 2015-06-25
+      long: "%B %d, %Y"   # June 25, 2015
+      short: "%b %d"      # Jun 25

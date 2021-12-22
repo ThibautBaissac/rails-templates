@@ -267,19 +267,6 @@ after_bundle do
     SimpleCov.start
   RUBY
 
-
-  # Package
-  ########################################
-  script = <<~JSON
-  ,
-    "scripts": {
-      "build": "esbuild app/javascript/*.* --bundle --outdir=app/assets/builds",
-      "build:css": "sass ./app/assets/stylesheets/application.scss ./app/assets/builds/application.css --no-source-map --load-path=node_modules"
-    }
-  }
-  JSON
-  gsub_file('package.json', /.*\K}/m, script)
-
   # Environments
   ########################################
   environment 'config.action_mailer.default_url_options = { host: "http://localhost:3000" }', env: 'development'

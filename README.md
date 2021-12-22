@@ -10,10 +10,17 @@ Create a brand new **Rails 7** full app using esbuild (instead of Webpack), Devi
 
 1. Install Rails 7:
 ```bash
+rails -v
 gem install rails
 ```
 
-2. Create your new project:
+2. Update node (npm 7.1+):
+```bash
+node -v
+nvm install node
+```
+
+3. Create your new project:
 ```bash
 rails new CHANGE_THIS_TO_YOUR_RAILS_APP_NAME -T \
   --database postgresql \
@@ -45,7 +52,7 @@ rails new CHANGE_THIS_TO_YOUR_RAILS_APP_NAME \
 ```
 
 ---
-## Hotwire
+## Rails 6 with Hotwire
 
 Get a [**Hotwired**](https://github.com/hotwired/hotwire-rails) rails app  **plus**  Devise installed with a generated User model.
 
